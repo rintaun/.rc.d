@@ -55,6 +55,7 @@ Windows Registry Editor Version 5.00
 "SshProt"=dword:00000002
 "LogHost"=""
 "SSH2DES"=dword:00000000
+"PublicKeyFile"=""
 "RemoteCommand"=""
 "RFCEnviron"=dword:00000000
 "PassiveTelnet"=dword:00000000
