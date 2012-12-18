@@ -82,9 +82,6 @@
     set laststatus=2                  " turn on statusbar
     let g:Powerline_symbols = 'fancy' " use fancy utf-8 symbols
 
-" PLUGIN - vim-git
-    Bundle "tpope/vim-git"
-
 " PLUGIN - vim-fugitive
     Bundle "tpope/vim-fugitive"
 
