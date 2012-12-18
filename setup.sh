@@ -15,7 +15,7 @@ __do_backups() {
         file="${HOME}/${v}"
         bakfile="${BACKUPS_DIR}/${v}"
         if [ -f "$file" ]; then
-            if (mv "$file" "$bakfile" > /dev/null); then
+            if (mv "$file" "$bakfile" > /dev/null 2>&1); then
                 printf " * Backed up '%s' to '%s'" "$file" "$bakfile"
             else
                 printf " x Error: Couldn't backup '%s'" "$file"
@@ -32,7 +32,7 @@ __do_links() {
         link="${HOME}/${files[$k]}"
         if [ -f "$link" ]; then
             printf " x Error: '%s' already exists" "$link"
-        elif (ln -s "$file" "$link" > /dev/null); then
+        elif (ln -s "$file" "$link" > /dev/null 2>&1); then
             printf " * Linked '%s' to '%s'" "$file" "$link"
         else
             printf " x Error: Couldn't link '%s' to '%s'" "$file" "$link"
