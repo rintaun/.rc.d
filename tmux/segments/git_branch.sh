@@ -66,11 +66,11 @@ __parse_git_branch() {
     if [[ $behindBy == 0 && $aheadBy == 0 ]]; then # same as upstream
         branchColor="colour33" #blue
     elif [[ $behindBy == 0 ]]; then # ahead of upstream
-        branchColor="colour64" #green
+        branchColor="colour2" #green
     elif [[ $aheadBy == 0 ]]; then # behind upstream
-        branchColor="colour160" #red
+        branchColor="colour1" #red
     else
-        branchColor="colour136" #yellow
+        branchColor="colour11" #yellow
     fi
 
     if [[ -n $branch ]]; then
