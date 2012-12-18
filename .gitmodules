@@ -4,3 +4,6 @@
 [submodule "tmux/lib/tmux-colors-solarized"]
 	path = tmux/lib/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "vim/config/bundle/vundle"]
+	path = vim/config/bundle/vundle
+	url = https://github.com/gmarik/vundle.git

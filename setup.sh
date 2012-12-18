@@ -7,6 +7,8 @@ declare -A files
 files=(
     ['tmux/tmux.conf']='.tmux.conf'
     ['tmux/powerlinerc']='.tmux-powerlinerc'
+    ['vim/vimrc']='.vimrc'
+    ['vim/config']='.vim'
 )
 
 __do_backups() {
