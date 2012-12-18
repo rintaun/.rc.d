@@ -16,7 +16,7 @@ __do_backups() {
     for v in "${files[@]}"; do
         file="${HOME}/${v}"
         bakfile="${BACKUPS_DIR}/${v}"
-        if [ -f "$file" ]; then
+        if [ -e "$file" ]; then
             if (mv "$file" "$bakfile" > /dev/null 2>&1); then
                 printf " * Backed up '%s' to '%s'" "$file" "$bakfile"
             else
