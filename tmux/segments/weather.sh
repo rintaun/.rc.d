@@ -94,10 +94,10 @@ __yahoo_weather() {
     	if [ "$TMUX_POWERLINE_SEG_WEATHER_UNIT" == "k" ]; then
         	degree=$(echo "${degree} + 273.15" | bc)
     	fi
-  	condition_symbol=$(__get_condition_symbol "$condition")
+#  	condition_symbol=$(__get_condition_symbol "$condition")
 #	deg=$'\xC2\xB0' # for some reason this causes statusbar to wrap
 #	deg=$'\u00B0'
-	echo "${condition_symbol} ${degree}${deg}${TMUX_POWERLINE_SEG_WEATHER_UNIT^^}"
+	echo "${condition_symbol}${degree}${deg}${TMUX_POWERLINE_SEG_WEATHER_UNIT^^}"
 	fi
 }
 
