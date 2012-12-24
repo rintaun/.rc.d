@@ -48,7 +48,7 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		"weather 37 255" \
 		#"xkb_layout 125 117" \
 		#"date_day 235 136" \
-		"date_full 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
+		"date_full 235 136" \
 		"time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
 	)
 fi
