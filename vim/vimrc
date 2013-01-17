@@ -73,14 +73,15 @@
     Bundle "gmarik/vundle"
 
 " PLUGIN - powerline
-    " NOTES
+    execute 'source '.fnameescape($XDG_CONFIG_HOME.'/lib/powerline/powerline/ext/vim/source_plugin.vim')
+" NOTES
     "    For this to look decent on Mac OS X, you need to download a Powerline
     "    patched font and enable it, or build your own. I use "Menlo" patched
     "    from https://gist.github.com/1595572.
     " install powerline
-    Bundle "Lokaltog/vim-powerline"
+    "Bundle "Lokaltog/vim-powerline"
     set laststatus=2                  " turn on statusbar
-    let g:Powerline_symbols = 'fancy' " use fancy utf-8 symbols
+    "let g:Powerline_symbols = 'fancy' " use fancy utf-8 symbols
 
 " PLUGIN - vim-fugitive
     Bundle "tpope/vim-fugitive"
