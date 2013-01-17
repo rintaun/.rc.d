@@ -1,3 +1,4 @@
 backups/
 vim/config/bundle
 tmp/
+powerline/segments/*.pyc

@@ -9,7 +9,12 @@
                                 "name": "uptime",
                                 "before": "⇑  ",
 				"before": "Up: "
-                        }
+                        },
+			{
+				"module": "segments.git",
+				"name": "git_branch"
+			}
+
                 ],
                 "right": [
                         {
