@@ -1,0 +1,32 @@
+{
+        "segments": {
+                "left": [
+                        {
+                                "module": "powerline.ext.terminal.segments",
+                                "name": "user"
+                        },
+                        {
+                                "name": "uptime",
+                                "before": "⇑  ",
+				"before": "Up: "
+                        }
+                ],
+                "right": [
+                        {
+                                "name": "system_load"
+                        },
+                        {
+                                "name": "date",
+                                "args": {"format": "%a"}
+                        },
+                        {
+                                "name": "date"
+                        },
+                        {
+                                "name": "date",
+                                "args": {"format": "%H:%M"}
+                        }
+                ]
+        }
+}
+
