@@ -5,6 +5,7 @@ BACKUPS_DIR="${LOCAL_RCD}/backups"
 declare -A files
 
 files=(
+    ['bash.rc']='.bashrc'
     ['tmux/tmux.conf']='.tmux.conf'
     ['tmux/powerlinerc']='.tmux-powerlinerc'
     ['vim/vimrc']='.vimrc'
