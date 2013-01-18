@@ -117,7 +117,7 @@ def git_index_status():
 
     output = "{0}{1}{2}{3}".format(iA, iM, iD, iU)
 
-    if output is "":
+    if output == "":
         return None
     
     return "{0}#[fg=colour250]".format(output)
@@ -165,7 +165,7 @@ def git_local_status():
 
     output = "{0}{1}{2}{3}".format(iA, iM, iD, iU)
 
-    if output is "":
+    if output == "":
         return None
 
     return "{0}#[fg=colour250]".format(output)
