@@ -1,30 +1,77 @@
 {
-	"name": "Default color scheme for terminal prompts",
-	"colors": {
-		"black": 16,
-		"white": 231,
+    "name": "Default color scheme for terminal prompts",
+    "colors": {
+        "black": 16,
+        "white": 231,
 
-		"darkestblue": 24,
-		"darkblue": 31,
-		"mediumblue": 38,
-		"brightblue": 117,
-		"brightestblue": 153,
+        "darkestgreen": 22,
+        "darkgreen": 28,
+        "mediumgreen": 70,
+        "brightgreen": 148,
 
-		"green": 148,
-		"yellow": 220,
-		"red": 202
-	},
-	"groups": {
-		"user": { "fg": "white", "bg": "mediumblue", "attr": ["bold"] },
-		"date": { "fg": "white", "bg": "mediumblue" },
-		"weather": { "fg": "brightestblue", "bg": "darkblue" },
-		"network_load": { "fg": "brightestblue", "bg": "darkblue" },
-		"external_ip": { "fg": "brightestblue", "bg": "darkblue" },
-		"system_load": { "fg": "brightblue", "bg": "darkestblue" },
-		"system_load_good": { "fg": "green", "bg": "darkestblue" },
-		"system_load_bad": { "fg": "yellow", "bg": "darkestblue" },
-		"system_load_ugly": { "fg": "red", "bg": "darkestblue" },
-		"uptime": { "fg": "brightblue", "bg": "darkestblue" },
-		"git_branch": { "fg": "brightblue", "bg": "darkestblue" }
-	}
+        "darkestcyan": 23,
+        "mediumcyan": 117,
+        "brightcyan": 159,
+
+        "darkestblue": 24,
+        "darkblue": 31,
+        "mediumblue": 38,
+        "brightblue": 117,
+        "brightestblue": 153,
+
+        "darkestred": 52,
+        "darkred": 88,
+        "mediumred": 124,
+        "brightred": 160,
+        "brightestred": 196,
+
+        "darkestpurple": 55,
+        "mediumpurple": 98,
+        "brightpurple": 189,
+
+        "darkorange": 94,
+        "mediumorange": 166,
+        "brightorange": 208,
+        "brightestorange": 214,
+
+        "brightyellow": 220,
+
+        "green": 46,
+        "yellow": 226,
+        "red": 196,
+
+        "gray0": 233,
+        "gray1": 235,
+        "gray2": 236,
+        "gray3": 239,
+        "gray4": 240,
+        "gray5": 241,
+        "gray6": 244,
+        "gray7": 245,
+        "gray8": 247,
+        "gray9": 250,
+        "gray10": 252,
+
+        "gradient1": 190,
+        "gradient2": 184,
+        "gradient3": 178,
+        "gradient4": 172,
+        "gradient5": 166,
+        "gradient6": 160
+    },
+    "groups": {
+        "user": { "fg": "white", "bg": "mediumblue", "attr": ["bold"] },
+        "date": { "fg": "white", "bg": "mediumblue" },
+        "weather": { "fg": "brightestblue", "bg": "darkblue" },
+        "network_load": { "fg": "brightestblue", "bg": "darkblue" },
+        "external_ip": { "fg": "brightestblue", "bg": "darkblue" },
+        "system_load": { "fg": "brightblue", "bg": "darkestblue" },
+        "system_load_good": { "fg": "green", "bg": "darkestblue" },
+        "system_load_bad": { "fg": "yellow", "bg": "darkestblue" },
+        "system_load_ugly": { "fg": "red", "bg": "darkestblue" },
+        "uptime": { "fg": "brightestblue", "bg": "darkestblue" },
+        "git_branch": { "fg": "gray9", "bg": "gray0" },
+        "git_index_status": { "fg": "green", "bg": "gray0" },
+        "git_local_status": { "fg": "red", "bg": "gray0" }
+    }
 }

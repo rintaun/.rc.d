@@ -2,3 +2,4 @@ backups/
 vim/config/bundle
 tmp/
 powerline/segments/*.pyc
+powerline/segments/tmux/*.pyc
