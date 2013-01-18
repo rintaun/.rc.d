@@ -60,15 +60,17 @@ def git_branch():
                     branch = m.group(1)
 
     branch = branch.strip()
+    aheadBy = 0 if aheadBy is None else aheadBy
+    behindBy = 0 if behindBy is None else behindBy
     if branch.__len__() > 0:
         if behindBy == 0 and aheadBy == 0:
-            branch_color = "colour33" # blue
+            branch_color = "colour39" # blue
         elif behindBy == 0:
-            branch_color = "colour2"  # green
+            branch_color = "colour34"  # green
         elif aheadBy == 0:
-            branch_color = "colour1"  # red
+            branch_color = "colour196"  # red
         else:
-            branch_color = "colour11" # yellow
+            branch_color = "colour226" # yellow
 
         branch = "#[fg={0}]{1}#[fg=colour250]".format(branch_color, branch)
         # '%s #[fg=%s]%s' "$branch_symbol" "$branchColor" "$branch"
