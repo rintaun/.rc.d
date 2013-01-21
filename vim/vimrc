@@ -73,7 +73,10 @@
     Bundle "gmarik/vundle"
 
 " PLUGIN - powerline
-    execute 'source '.fnameescape($XDG_CONFIG_HOME.'/lib/powerline/powerline/ext/vim/source_plugin.vim')
+    if !empty($XDG_CONFIG_HOME)
+        source $XDG_CONFIG_HOME/lib/powerline/powerline/ext/vim/source_plugin.vim
+    endif
+   " xecute 'source '.fnameescape($XDG_CONFIG_HOME.'/lib/powerline/powerline/ext/vim/source_plugin.vim')
 " NOTES
     "    For this to look decent on Mac OS X, you need to download a Powerline
     "    patched font and enable it, or build your own. I use "Menlo" patched
