@@ -12,6 +12,18 @@ files=(
     ['vim/config']='.vim'
 )
 
+__do_submodules() {
+    printf "Initializing Git submodules..."
+    cd ${LOCAL_RCD}
+    if (git submodule update --init --recursive 2>&1 > /dev/null); then
+        printf " completed."
+    else
+        printf " failed."
+    fi
+    printf "\n"
+
+}
+
 __do_backups() {
     echo "Backing up files:"
     for v in "${files[@]}"; do
@@ -44,5 +56,6 @@ __do_links() {
     done
 }
 
+__do_submodules
 __do_backups
 __do_links
