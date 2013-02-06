@@ -14,7 +14,7 @@ files=(
 __do_submodules() {
     printf "Initializing Git submodules..."
     cd ${LOCAL_RCD}
-    if (git submodule update --init --recursive 2>&1 > /dev/null); then
+    if (git submodule update --init --recursive &> /dev/null); then
         printf " completed."
     else
         printf " failed."
@@ -29,7 +29,7 @@ __do_backups() {
         file="${HOME}/${v}"
         bakfile="${BACKUPS_DIR}/${v}"
         if [ -e "$file" ]; then
-            if (mv "$file" "$bakfile" > /dev/null 2>&1); then
+            if (mv "$file" "$bakfile" &> /dev/null); then
                 printf " * Backed up '%s' to '%s'" "$file" "$bakfile"
             else
                 printf " x Error: Couldn't backup '%s'" "$file"
@@ -46,7 +46,7 @@ __do_links() {
         link="${HOME}/${files[$k]}"
         if [ -f "$link" ]; then
             printf " x Error: '%s' already exists" "$link"
-        elif (ln -s "$file" "$link" > /dev/null 2>&1); then
+        elif (ln -s "$file" "$link" &> /dev/null); then
             printf " * Linked '%s' to '%s'" "$file" "$link"
         else
             printf " x Error: Couldn't link '%s' to '%s'" "$file" "$link"
@@ -56,7 +56,7 @@ __do_links() {
 }
 
 __do_vim_bundles() {
-    printf "Installing vim Bundles: "
+    printf "Installing vim Bundles... "
     if (vim +BundleInstall +qall &> /dev/null); then
         printf " completed."
     else
