@@ -66,6 +66,6 @@ __do_vim_bundles() {
 }
 
 __do_submodules
+__do_vim_bundles
 __do_backups
 __do_links
-__do_vim_bundles
