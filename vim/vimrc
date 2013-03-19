@@ -101,6 +101,9 @@
 " PLUGIN - puppet-syntax-vim
     Bundle "puppetlabs/puppet-syntax-vim"
 
+" PLUGIN - html5-syntax-vim
+    Bundle "othree/html5-syntax.vim"
+
 " PLUGIN - vim-indent-guides
     Bundle "nathanaelkane/vim-indent-guides"
     " prevent errors from cropping up
