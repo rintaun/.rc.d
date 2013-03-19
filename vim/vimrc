@@ -102,7 +102,7 @@
     Bundle "puppetlabs/puppet-syntax-vim"
 
 " PLUGIN - html5-syntax-vim
-    Bundle "othree/html5-syntax.vim"
+    Bundle "othree/html5.vim"
 
 " PLUGIN - vim-indent-guides
     Bundle "nathanaelkane/vim-indent-guides"
