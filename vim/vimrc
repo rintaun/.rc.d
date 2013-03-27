@@ -104,6 +104,15 @@
 " PLUGIN - html5-syntax-vim
     Bundle "othree/html5.vim"
 
+" PLUGIN - vim-javascript
+    Bundle "pangloss/vim-javascript"
+
+" PLUGIN - vim-handlebars
+    Bundle "nono/vim-handlebars"
+
+" PLUGIN - vim-less
+    Bundle "groenewege/vim-less"
+
 " PLUGIN - vim-indent-guides
     Bundle "nathanaelkane/vim-indent-guides"
     " prevent errors from cropping up
