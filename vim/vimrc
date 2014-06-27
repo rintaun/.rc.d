@@ -60,6 +60,13 @@
     noremap  <Left>  <NOP>
     noremap  <Right> <NOP>
 
+    " Highlight end of line whitespace.
+    highlight ExtraWhitespace ctermbg=red guibg=red
+    match ExtraWhitespace /\s\+$/
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
 " PLUGIN - vundle
     " NOTES
     "   This requires pre-cloning of the git repository, eg:
@@ -113,6 +120,11 @@
 " PLUGIN - vim-less
     Bundle "groenewege/vim-less"
 
+" PLUGIN - vim-yml
+    Bundle "vim-scripts/yaml.vim"
+    au BufNewFile,BufRead *.yaml,*.yml    setf yaml
+
+
 " PLUGIN - vim-indent-guides
     Bundle "nathanaelkane/vim-indent-guides"
     " prevent errors from cropping up
@@ -128,3 +140,6 @@
 
 " post-vundle-install required setting
     filetype plugin indent on
+
+    Bundle "mitsuhiko/vim-jinja"
+    au BufNewFile,BufRead *.jinja2 setf htmljinja

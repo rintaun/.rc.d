@@ -5,7 +5,7 @@ BACKUPS_DIR="${LOCAL_RCD}/backups"
 declare -A files
 
 files=(
-    ['bash.rc']='.bashrc'
+    ['bashrc']='.bashrc'
     ['tmux/tmux.conf']='.tmux.conf'
     ['vim/vimrc']='.vimrc'
     ['vim/config']='.vim'
@@ -44,6 +44,10 @@ __do_links() {
     for k in "${!files[@]}"; do
         file="${LOCAL_RCD}/${k}"
         link="${HOME}/${files[$k]}"
+        if [ ! -d $(dirname $link) ]; then
+            mkdir -p $(dirname $link)
+        fi
+
         if [ -f "$link" ]; then
             printf " x Error: '%s' already exists" "$link"
         elif (ln -s "$file" "$link" &> /dev/null); then
