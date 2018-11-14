@@ -9,6 +9,22 @@ files=(
     'vim/config::.vim'
 )
 
+mv_no_override() {
+    local dir file num
+    num=0
+    if [ -d "$2" ]; then
+        dir=$2
+        file=$(basename "$1")
+    else
+        dir=$(dirname "$2")
+        file=$(basename "$2")
+    fi
+    while [ -e "$dir/$file.$num" ]; do
+        (( num++ ))
+    done
+    mv -n "$1" "$dir/$file.$num"
+}
+
 __do_submodules() {
     printf "Initializing Git submodules..."
     cd ${LOCAL_RCD}
@@ -29,7 +45,7 @@ __do_backups() {
         file="${HOME}/${VALUE}"
         bakfile="${BACKUPS_DIR}/${VALUE}"
         if [ -e "$file" ]; then
-            if (mv "$file" "$bakfile" &> /dev/null); then
+            if (mv_no_override "$file" "$bakfile" &> /dev/null); then
                 printf " * Backed up '%s' to '%s'" "$file" "$bakfile"
             else
                 printf " x Error: Couldn't backup '%s'" "$file"
