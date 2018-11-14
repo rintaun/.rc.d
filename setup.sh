@@ -2,13 +2,11 @@
 LOCAL_RCD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUPS_DIR="${LOCAL_RCD}/backups"
 
-declare -A files
-
 files=(
-    ['bashrc']='.bashrc'
-    ['tmux/tmux.conf']='.tmux.conf'
-    ['vim/vimrc']='.vimrc'
-    ['vim/config']='.vim'
+    'bashrc::.bashrc'
+    'tmux/tmux.conf::.tmux.conf'
+    'vim/vimrc::.vimrc'
+    'vim/config::.vim'
 )
 
 __do_submodules() {
@@ -25,9 +23,11 @@ __do_submodules() {
 
 __do_backups() {
     echo "Backing up files:"
-    for v in "${files[@]}"; do
-        file="${HOME}/${v}"
-        bakfile="${BACKUPS_DIR}/${v}"
+    for index in "${files[@]}"; do
+        KEY="${index%%::*}"
+        VALUE="${index##*::}"
+        file="${HOME}/${VALUE}"
+        bakfile="${BACKUPS_DIR}/${VALUE}"
         if [ -e "$file" ]; then
             if (mv "$file" "$bakfile" &> /dev/null); then
                 printf " * Backed up '%s' to '%s'" "$file" "$bakfile"
@@ -41,9 +41,11 @@ __do_backups() {
 
 __do_links() {
     echo "Linking files:"
-    for k in "${!files[@]}"; do
-        file="${LOCAL_RCD}/${k}"
-        link="${HOME}/${files[$k]}"
+    for index in "${files[@]}"; do
+        KEY="${index%%::*}"
+        VALUE="${index##*::}"
+        file="${LOCAL_RCD}/${KEY}"
+        link="${HOME}/${VALUE}"
         if [ ! -d $(dirname $link) ]; then
             mkdir -p $(dirname $link)
         fi
