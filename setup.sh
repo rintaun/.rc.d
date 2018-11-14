@@ -50,8 +50,10 @@ __do_backups() {
             else
                 printf " x Error: Couldn't backup '%s'" "$file"
             fi
-            printf "\n"
+        else
+            printf " ? Warning: File '%s' does not exist" "$file"
         fi
+        printf "\n"
     done
 }
 
