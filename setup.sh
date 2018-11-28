@@ -39,6 +39,8 @@ __do_submodules() {
 __do_install_fonts() {
     cd ${LOCAL_RCD}/powerline-fonts
     ./install.sh
+    cd ${LOCAL_RCD}/awesome-terminal-fonts
+    (./install.sh > /dev/null) || return 0
 }
 
 __do_backups() {

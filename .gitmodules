@@ -10,3 +10,6 @@
 [submodule "powerline-fonts"]
 	path = powerline-fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "awesome-terminal-fonts"]
+	path = awesome-terminal-fonts
+	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
