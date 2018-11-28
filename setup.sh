@@ -34,7 +34,11 @@ __do_submodules() {
         printf " failed."
     fi
     printf "\n"
+}
 
+__do_install_fonts() {
+    cd ${LOCAL_RCD}/powerline-fonts
+    ./install.sh
 }
 
 __do_backups() {
@@ -90,6 +94,7 @@ __do_vim_bundles() {
 }
 
 __do_submodules
+__do_install_fonts
 __do_vim_bundles
 __do_backups
 __do_links

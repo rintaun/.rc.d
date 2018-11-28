@@ -7,3 +7,6 @@
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = https://github.com/Lokaltog/powerline
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = https://github.com/powerline/fonts.git
