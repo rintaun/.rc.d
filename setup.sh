@@ -4,6 +4,7 @@ BACKUPS_DIR="${LOCAL_RCD}/backups"
 
 files=(
     'bashrc::.bashrc'
+    'zsh/zshrc::.zshrc'
     'tmux/tmux.conf::.tmux.conf'
     'vim/vimrc::.vimrc'
     'vim/config::.vim'
