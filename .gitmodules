@@ -3,7 +3,7 @@
 	url = https://github.com/seebi/tmux-colors-solarized.git
 [submodule "vim/config/bundle/vundle"]
 	path = vim/config/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
+	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = https://github.com/Lokaltog/powerline
