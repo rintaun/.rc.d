@@ -155,10 +155,15 @@ Bundle "w0rp/ale"
 
     let g:ale_fixers = {}
     let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-    let g:ale_fixers['css'] = ['prettier']
+    let g:ale_fixers['css'] = ['prettier', 'stylelint']
+    let g:ale_fixers['scss'] = g:ale_fixers['css']
+    let g:ale_fixers['ruby'] = ['rubocop']
 
     let g:ale_linters = {}
     let g:ale_linters['javascript'] = ['eslint']
+    let g:ale_linters['css'] = ['stylelint']
+    let g:ale_linters['scss'] = g:ale_linters['css']
+    let g:ale_linters['ruby'] = ['rubocop']
 
     let g:ale_fix_on_save = 1
 
