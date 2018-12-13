@@ -168,3 +168,5 @@ Plugin 'w0rp/ale'
     let g:ale_fix_on_save = 1
 
 colorscheme bubblegum-256-dark
+
+Plugin 'Valloric/YouCompleteMe'
