@@ -22,3 +22,5 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 antigen theme bhilburn/powerlevel9k
 
 antigen apply
+
+alias vim=vim -p
