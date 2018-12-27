@@ -170,3 +170,27 @@ Plugin 'w0rp/ale'
 colorscheme bubblegum-256-dark
 
 Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'noprompt/vim-yardoc'
+
+Plugin 'junegunn/fzf'
+nnoremap <C-p> :FZF<Cr>
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Identifier'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Identifier'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_action = {
+  \ 'enter':  'tab split',
+  \ 'ctrl-e': 'e',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
