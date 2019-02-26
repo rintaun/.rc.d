@@ -9,6 +9,7 @@ set shiftwidth=4 " indent level is also 4 characters wide by default
 set expandtab    " expand tabs to spaces when I push the tab key
 set nopaste      " do not assume paste mode by default
 set backspace=indent,eol,start
+set switchbuf=usetab,newtab
 
 " remap ]], [[, [], and ][ to find block edges without C-style blocking
 " Filched from vim help, see :help object-motions
@@ -165,6 +166,7 @@ Plugin 'w0rp/ale'
     let g:ale_linters['scss'] = g:ale_linters['css']
     let g:ale_linters['ruby'] = ['rubocop']
 
+    let g:ale_sign_column_always = 1
     let g:ale_fix_on_save = 1
 
 colorscheme bubblegum-256-dark
@@ -194,3 +196,5 @@ let g:fzf_action = {
   \ 'ctrl-e': 'e',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+set number
