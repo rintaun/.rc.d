@@ -201,3 +201,5 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 set number
+
+Plugin 'tpope/vim-endwise'
