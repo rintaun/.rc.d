@@ -90,6 +90,9 @@ Plugin 'tpope/vim-markdown'
 " PLUGIN - NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" PLUGIN - NERDTree Git plugin
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " PLUGIN - undo-tree
 Plugin 'mbbill/undotree'
 
