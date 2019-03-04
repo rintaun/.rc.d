@@ -81,6 +81,9 @@ Plugin 'VundleVim/Vundle.vim'
 " PLUGIN - vim-fugitive
 Plugin 'tpope/vim-fugitive'
 
+" PLUGIN - vim-rhubarb
+Plugin 'tpope/vim-rhubarb'
+
 " PLUGIN - vim-markdown
 Plugin 'tpope/vim-markdown'
 
