@@ -12,6 +12,7 @@ files=(
     'zsh/zshrc::.zshrc'
     'zsh/zlogin::.zlogin'
     'zsh/p10k.zsh::.p10k.zsh'
+    'tmux/scripts::.tmux'
     'tmux/tmux.conf::.tmux.conf'
     'vim/vimrc::.vimrc'
     'vim/config::.vim'
