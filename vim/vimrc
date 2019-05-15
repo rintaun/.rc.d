@@ -49,6 +49,8 @@ function! VS()
     return join(lines, "\n")
 endfunction
 
+noremap <C-J> {V}gq}
+
 " learn vim the hard way - disable arrow movement
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
