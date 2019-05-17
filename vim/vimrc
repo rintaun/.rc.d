@@ -27,8 +27,9 @@ map #v [#v]#
 map #d [#wlv]#$hd
 map #c [#wv]#$hc#<Space>
 
-map <C-PageUp> gT<CR>
-map <C-PageDown> gt<CR>
+nnoremap  <Left>  gT
+nnoremap  <Right> gt
+nnoremap <C-n> :tabnew<CR>
 
 " syntax highlighting
 set       t_Co=256 " 256-color terminal
@@ -67,8 +68,6 @@ inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 noremap  <Up>    <NOP>
 noremap  <Down>  <NOP>
-noremap  <Left>  <NOP>
-noremap  <Right> <NOP>
 
 " Highlight end of line whitespace.
 highlight ExtraWhitespace ctermbg=red guibg=red
