@@ -2,6 +2,11 @@
 LOCAL_RCD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUPS_DIR="${LOCAL_RCD}/backups"
 
+command -v git >/dev/null 2>&1 || \
+    { echo >&2 "git is required but not installed. Aborting."; exit 1; }
+command -v node >/dev/null 2>&1 || \
+    { echo >&2 "node is required but not installed. Aborting."; exit 1; }
+
 files=(
     'bashrc::.bashrc'
     'zsh/zshrc::.zshrc'
@@ -9,6 +14,7 @@ files=(
     'tmux/tmux.conf::.tmux.conf'
     'vim/vimrc::.vimrc'
     'vim/config::.vim'
+    'git::.git'
 )
 
 mv_no_override() {
@@ -97,8 +103,21 @@ __do_vim_bundles() {
     printf "\n"
 }
 
+__do_git_setup() {
+    printf "Setting up git... "
+    npm install --global git-mob
+
+    git config --global user.name "Matthew Lanigan"
+    git config --global user.email "rintaun@gmail.com"
+    git config --global commit.gpgsign true
+    git config --global commit.template ~/.git/commit-template
+    git config --global core.hookspath = ~/.git/hooks
+    printf " completed.\n"
+}
+
 __do_submodules
 __do_install_fonts
 __do_vim_bundles
 __do_backups
 __do_links
+__do_git_setup
