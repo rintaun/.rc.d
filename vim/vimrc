@@ -18,6 +18,15 @@ map ][ /}<CR>b00]}
 map ]] j0[[%/{<CR>
 map [] k$][%?}<CR>
 
+map [# [[/\A\s*#<CR>
+map ]# ]]?\A\s*#<CR>
+
+map #V [#V]#
+map #D [#V]#D
+map #v [#v]#
+map #d [#wlv]#$hd
+map #c [#wv]#$hc#<Space>
+
 map <C-PageUp> gT<CR>
 map <C-PageDown> gt<CR>
 
@@ -49,7 +58,7 @@ function! VS()
     return join(lines, "\n")
 endfunction
 
-noremap <C-J> {V}gq}
+noremap <C-J> {V}gq
 
 " learn vim the hard way - disable arrow movement
 inoremap <Up>    <NOP>
