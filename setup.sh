@@ -104,15 +104,16 @@ __do_vim_bundles() {
 }
 
 __do_git_setup() {
-    printf "Setting up git... "
-    npm install --global git-mob
+    printf "Setting up git... \n"
+    npm install --global git-mob 2>&1 1>/dev/null
 
     git config --global user.name "Matthew Lanigan"
     git config --global user.email "rintaun@gmail.com"
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
     git config --global core.hookspath = ~/.git/hooks
-    printf " completed.\n"
+    printf "\e[1A"
+    printf "Setting up git... completed.\n"
 }
 
 __do_submodules
