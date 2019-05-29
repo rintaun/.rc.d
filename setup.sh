@@ -111,7 +111,7 @@ __do_git_setup() {
     git config --global user.email "rintaun@gmail.com"
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
-    git config --global core.hookspath = ~/.git/hooks
+    git config --global core.hookspath ~/.git/hooks
     printf "\e[1A"
     printf "Setting up git... completed.\n"
 }
