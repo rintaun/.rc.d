@@ -94,8 +94,11 @@ Plugin 'tpope/vim-fugitive'
 " PLUGIN - vim-rhubarb
 Plugin 'tpope/vim-rhubarb'
 
-" PLUGIN - vim-markdown
-Plugin 'tpope/vim-markdown'
+" Markdown plugins
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+    let g:vim_markdown_folding_disabled = 1
+Plugin 'iamcco/markdown-preview.nvim'
 
 " PLUGIN - NERDTree
 Plugin 'scrooloose/nerdtree'
