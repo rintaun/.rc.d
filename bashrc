@@ -15,9 +15,6 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 export XDG_CONFIG_HOME="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 PS1="$PS1"'$([ -n "$TMUX" ] && export TMUXPWD_$(tmux display -p "#D" | tr -d %)=$PWD)'
 
 alias tmux='tmux -2'
@@ -25,7 +22,6 @@ alias tmux='tmux -2'
 [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 [[ -s "~/.rvm/scripts/rvm" ]] && source ~/.rvm/scripts/rvm
-PATH=/usr/local/heroku/bin:$PATH
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
