@@ -15,6 +15,7 @@ files=(
     'vim/vimrc::.vimrc'
     'vim/config::.vim'
     'git::.git'
+    'nvm/nvmrc::.nvmrc'
 )
 
 mv_no_override() {
