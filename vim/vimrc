@@ -224,3 +224,5 @@ Plugin 'tpope/vim-endwise'
 Plugin 'jparise/vim-graphql'
     au BufNewFile,BufRead *.graphql setf graphql
     au BufNewFile,BufRead *.gql setf graphql
+
+Plugin 'rhysd/vim-grammarous'
