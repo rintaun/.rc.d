@@ -98,6 +98,7 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled = 1
+    set conceallevel=2
 Plugin 'iamcco/markdown-preview.nvim'
 
 " PLUGIN - NERDTree
