@@ -228,3 +228,10 @@ Plugin 'jparise/vim-graphql'
     au BufNewFile,BufRead *.gql setf graphql
 
 Plugin 'rhysd/vim-grammarous'
+
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-projectionist'
+
+Plugin 'andymass/vim-matchup'
+    let g:matchup_matchparen_deferred = 1
+    let g:matchup_matchparen_hi_surround_always = 1
