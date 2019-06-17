@@ -216,6 +216,8 @@ let g:fzf_action = {
   \ 'ctrl-e': 'e',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+let g:fzf_history_dir = '~/.rc.d/share/fzf-history'
+let g:fzf_buffers_jump = 1
 
 set number
 
