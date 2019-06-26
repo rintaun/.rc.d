@@ -1,4 +1,5 @@
 backups/
+share/
 vim/config/bundle
 tmp/
 powerline/segments/*.pyc
