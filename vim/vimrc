@@ -1,10 +1,10 @@
 " filesystem management
-set nowb       " do not create filename~ backups
-set noswapfile " do not use .filename.swp/swo swap files
+set nowb         " do not create filename~ backups
+set noswapfile   " do not use .filename.swp/swo swap files
 
 " code style preferences
 set smartindent  " have VIM auto-indent when possible
-set tabstop=4 " tabs are 4 characters wide by default for most code
+set tabstop=4    " tabs are 4 characters wide by default for most code
 set shiftwidth=4 " indent level is also 4 characters wide by default
 set expandtab    " expand tabs to spaces when I push the tab key
 set nopaste      " do not assume paste mode by default
@@ -37,9 +37,9 @@ syntax    enable   " enable highlighting
 
 " add overflow column warning coloring
 if exists('+colorcolumn')
-    set colorcolumn=79
+  set colorcolumn=79
 else
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79.\+', -1)
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>79.\+', -1)
 endif
 
 " set text width manually, cause colorcolumn sets it to that
@@ -51,12 +51,12 @@ autocmd FileType gitcommit set textwidth=72
 " grab the contents of the visual selection
 " thanks to http://stackoverflow.com/a/6271254
 function! VS()
-    let [lnum1, col1] = getpos("'<")[1:2]
-    let [lnum2, col2] = getpos("'>")[1:2]
-    let lines = getline(lnum1, lnum2)
-    let lines[-1] = lines[-1][: col2 - 2]
-    let lines[0] = lines[0][col1 - 1:]
-    return join(lines, "\n")
+  let [lnum1, col1] = getpos("'<")[1:2]
+  let [lnum2, col2] = getpos("'>")[1:2]
+  let lines = getline(lnum1, lnum2)
+  let lines[-1] = lines[-1][: col2 - 2]
+  let lines[0] = lines[0][col1 - 1:]
+  return join(lines, "\n")
 endfunction
 
 noremap <C-J> {V}gq
@@ -97,8 +97,8 @@ Plugin 'tpope/vim-rhubarb'
 " Markdown plugins
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-    let g:vim_markdown_folding_disabled = 1
-    set conceallevel=2
+  let g:vim_markdown_folding_disabled = 1
+  set conceallevel=2
 Plugin 'iamcco/markdown-preview.nvim'
 
 " PLUGIN - NERDTree
@@ -127,67 +127,67 @@ Plugin 'groenewege/vim-less'
 
 " PLUGIN - vim-yml
 Plugin 'vim-scripts/yaml.vim'
-    au BufNewFile,BufRead *.yaml,*.yml    setf yaml
+  au BufNewFile,BufRead *.yaml,*.yml    setf yaml
 
 " PLUGIN - vim-indent-guides
 Plugin 'nathanaelkane/vim-indent-guides'
-    " prevent errors from cropping up
-    hi Normal ctermbg=black
-    let g:indent_guides_start_level = 2 " no clue
-    let g:indent_guides_guide_size  = 1 " no fat guides
-    let g:indent_guides_auto_colors = 0 " skip auto-color decisions
-    " make some pretty colors
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
-    " turn it on by default
-    autocmd VimEnter * :IndentGuidesEnable
+  " prevent errors from cropping up
+  hi Normal ctermbg=black
+  let g:indent_guides_start_level = 2 " no clue
+  let g:indent_guides_guide_size  = 1 " no fat guides
+  let g:indent_guides_auto_colors = 0 " skip auto-color decisions
+  " make some pretty colors
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=239
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+  " turn it on by default
+  autocmd VimEnter * :IndentGuidesEnable
 
-    " post-vundle-install required setting
-    filetype plugin indent on
+  " post-vundle-install required setting
+  filetype plugin indent on
 
 Plugin 'mitsuhiko/vim-jinja'
-    au BufNewFile,BufRead *.jinja2 setf htmljinja
+  au BufNewFile,BufRead *.jinja2 setf htmljinja
 
 " PLUGIN - editorconfig-vim
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-    let g:airline_theme='bubblegum'
+  let g:airline_theme='bubblegum'
 
-    " powerline symbols
-    let g:airline_powerline_fonts = 1
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-    let g:airline_symbols.branch = ''
+  " powerline symbols
+  let g:airline_powerline_fonts = 1
+  if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+  let g:airline_symbols.branch = ''
 
-    " tabline
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-    let g:airline#extensions#tabline#fnamemod = ':t'
-    let g:airline#extensions#tabline#fnamecollapse=0
-    let g:airline#extensions#tabline#fnametruncate=0
+  " tabline
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#fnamecollapse=0
+  let g:airline#extensions#tabline#fnametruncate=0
 
-    " whitspace
-    let g:airline#extensions#whitespace#enabled = 1
+  " whitspace
+  let g:airline#extensions#whitespace#enabled = 1
 
 Plugin 'w0rp/ale'
-    let g:jsx_ext_required = 0
+  let g:jsx_ext_required = 0
 
-    let g:ale_fixers = {}
-    let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-    let g:ale_fixers['css'] = ['prettier', 'stylelint']
-    let g:ale_fixers['scss'] = g:ale_fixers['css']
-    let g:ale_fixers['ruby'] = ['rubocop']
+  let g:ale_fixers = {}
+  let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+  let g:ale_fixers['css'] = ['prettier', 'stylelint']
+  let g:ale_fixers['scss'] = g:ale_fixers['css']
+  let g:ale_fixers['ruby'] = ['rubocop']
 
-    let g:ale_linters = {}
-    let g:ale_linters['javascript'] = ['eslint']
-    let g:ale_linters['css'] = ['stylelint']
-    let g:ale_linters['scss'] = g:ale_linters['css']
-    let g:ale_linters['ruby'] = ['rubocop']
+  let g:ale_linters = {}
+  let g:ale_linters['javascript'] = ['eslint']
+  let g:ale_linters['css'] = ['stylelint']
+  let g:ale_linters['scss'] = g:ale_linters['css']
+  let g:ale_linters['ruby'] = ['rubocop']
 
-    let g:ale_sign_column_always = 1
-    let g:ale_fix_on_save = 1
+  let g:ale_sign_column_always = 1
+  let g:ale_fix_on_save = 1
 
 colorscheme bubblegum-256-dark
 
@@ -197,8 +197,8 @@ Plugin 'noprompt/vim-yardoc'
 
 Plugin 'junegunn/fzf'
 nnoremap <C-p> :FZF<Cr>
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Identifier'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -224,8 +224,8 @@ set number
 Plugin 'tpope/vim-endwise'
 
 Plugin 'jparise/vim-graphql'
-    au BufNewFile,BufRead *.graphql setf graphql
-    au BufNewFile,BufRead *.gql setf graphql
+  au BufNewFile,BufRead *.graphql setf graphql
+  au BufNewFile,BufRead *.gql setf graphql
 
 Plugin 'rhysd/vim-grammarous'
 
@@ -233,9 +233,9 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-projectionist'
 
 Plugin 'andymass/vim-matchup'
-    let g:matchup_matchparen_deferred = 1
-    let g:matchup_matchparen_hi_surround_always = 1
-    nnoremap <c-k> :<c-u>MatchupWhereAmI?<cr>
+  let g:matchup_matchparen_deferred = 1
+  let g:matchup_matchparen_hi_surround_always = 1
+  nnoremap <c-k> :<c-u>MatchupWhereAmI?<cr>
 
 Plugin 'luochen1990/rainbow'
-    let g:rainbow_active = 1
+  let g:rainbow_active = 1
