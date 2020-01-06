@@ -1,8 +1,8 @@
-source ~/.rc.d/zsh/antigen.zsh
+RCDIR=`realpath -m $(realpath $HOME/.zshrc)/../..`
 
-RCDIR=`realpath .zshrc`/../../
+source "$RCDIR/zsh/antigen.zsh"
 
-export FZF_BASE="${RCDIR:A}/vim/config/bundle/fzf"
+export FZF_BASE="$RCDIR/vim/config/bundle/fzf"
 
 antigen use oh-my-zsh
 
