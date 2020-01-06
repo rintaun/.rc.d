@@ -4,8 +4,8 @@ set noswapfile   " do not use .filename.swp/swo swap files
 
 " code style preferences
 set smartindent  " have VIM auto-indent when possible
-set tabstop=4    " tabs are 4 characters wide by default for most code
-set shiftwidth=4 " indent level is also 4 characters wide by default
+set tabstop=2    " tabs are 2 characters wide by default for most code
+set shiftwidth=2 " indent level is also 2 characters wide by default
 set expandtab    " expand tabs to spaces when I push the tab key
 set nopaste      " do not assume paste mode by default
 set backspace=indent,eol,start
@@ -133,7 +133,7 @@ Plugin 'vim-scripts/yaml.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
   " prevent errors from cropping up
   hi Normal ctermbg=black
-  let g:indent_guides_start_level = 2 " no clue
+  let g:indent_guides_start_level = 1 " start at the first indentation
   let g:indent_guides_guide_size  = 1 " no fat guides
   let g:indent_guides_auto_colors = 0 " skip auto-color decisions
   " make some pretty colors
