@@ -179,12 +179,14 @@ Plugin 'w0rp/ale'
   let g:ale_fixers['css'] = ['prettier', 'stylelint']
   let g:ale_fixers['scss'] = g:ale_fixers['css']
   let g:ale_fixers['ruby'] = ['rubocop']
+  let g:ale_fixers['json'] = ['fixjson']
 
   let g:ale_linters = {}
   let g:ale_linters['javascript'] = ['eslint']
   let g:ale_linters['css'] = ['stylelint']
   let g:ale_linters['scss'] = g:ale_linters['css']
   let g:ale_linters['ruby'] = ['rubocop']
+  let g:ale_linters['json'] = ['jsonlint']
 
   let g:ale_sign_column_always = 1
   let g:ale_fix_on_save = 1
