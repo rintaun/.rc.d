@@ -5,3 +5,4 @@ tmp/
 powerline/segments/*.pyc
 powerline/segments/tmux/*.pyc
 .vim
+env
