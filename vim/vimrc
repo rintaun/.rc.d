@@ -193,7 +193,7 @@ Plugin 'w0rp/ale'
 
 colorscheme bubblegum-256-dark
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'noprompt/vim-yardoc'
 
