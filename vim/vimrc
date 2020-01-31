@@ -242,3 +242,5 @@ Plugin 'andymass/vim-matchup'
 
 Plugin 'luochen1990/rainbow'
   let g:rainbow_active = 1
+
+au BufNewFile,BufRead *.workflow setf ruby
