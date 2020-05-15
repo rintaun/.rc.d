@@ -60,6 +60,7 @@
         "gradient6": 160
     },
     "groups": {
+        "hostname": { "fg": "brightyellow", "bg": "mediumorange" },
         "user": { "fg": "white", "bg": "mediumblue", "attr": ["bold"] },
         "date": { "fg": "white", "bg": "mediumblue" },
         "weather": { "fg": "brightestblue", "bg": "darkblue" },
