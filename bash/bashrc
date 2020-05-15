@@ -1,7 +1,6 @@
 RCDIR=`realpath -m $(realpath $HOME/.bashrc)/../..`
 
 export FZF_BASE="$RCDIR/vim/config/bundle/fzf"
-export ASDF_DATA_DIR="$RCDIR/asdf"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
