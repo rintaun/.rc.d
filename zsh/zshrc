@@ -15,6 +15,7 @@ antigen bundle fzf
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
+antigen bundle asdf
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_STRATEGY='truncate_to_unique'
@@ -23,7 +24,7 @@ POWERLEVEL9K_VCS_SHORTEN_STRATEGY='truncate_from_right'
 POWERLEVEL9K_VCS_SHORTEN_LENGTH=17
 POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=25
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir rvm nvm vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir asdf cs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 antigen theme romkatv/powerlevel10k
@@ -38,10 +39,25 @@ function vimgrep() {
   vim -p $(git grep $@ | cut -d: -f1 | sort | uniq)
 }
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
 [[ -f "$RCDIR/env" ]] && source "$RCDIR/env"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+/usr/bin/keychain --quiet --nogui $HOME/.ssh/id_rsa
+source $HOME/.keychain/$HOST-sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# NVM (node) setup -- disabled in favor of asdf
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# source "$RCDIR/zsh/nvm.zsh"
+# [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# YVM (yarn) setup -- disabled in favor of asdf
+# export YVM_DIR=/home/rintaun/.yvm
+# [ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
+
+# RVM (ruby) setup -- disabled in favor of asdf
+# export PATH="$PATH:$HOME/.rvm/bin"
+# [[ -s "~/.rvm/scripts/rvm" ]] && source ~/.rvm/scripts/rvm

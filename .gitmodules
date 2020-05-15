@@ -13,3 +13,6 @@
 [submodule "awesome-terminal-fonts"]
 	path = awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
+[submodule "asdf/runtime"]
+	path = asdf/runtime
+	url = https://github.com/asdf-vm/asdf.git

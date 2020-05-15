@@ -16,6 +16,8 @@ files=(
     'vim/config::.vim'
     'git::.git'
     'nvm/nvmrc::.nvmrc'
+    'asdf/asdfrc::.asdfrc'
+    'asdf/runtime::.asdf'
 )
 
 mv_no_override() {
