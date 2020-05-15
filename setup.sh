@@ -8,7 +8,7 @@ command -v node >/dev/null 2>&1 || \
     { echo >&2 "node is required but not installed. Aborting."; exit 1; }
 
 files=(
-    'bashrc::.bashrc'
+    'bash/bashrc::.bashrc'
     'zsh/zshrc::.zshrc'
     'zsh/zlogin::.zlogin'
     'tmux/tmux.conf::.tmux.conf'
