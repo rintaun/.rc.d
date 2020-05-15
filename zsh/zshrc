@@ -30,6 +30,8 @@ antigen theme romkatv/powerlevel10k
 
 antigen apply
 
+compaudit 2>&1 | grep -z '^/' -s | xargs -0r chmod 755
+
 alias vim=vim -p
 
 function vimgrep() {
