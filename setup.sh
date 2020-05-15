@@ -1,11 +1,11 @@
-#/usr/bin/env bash
-LOCAL_RCD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#!/usr/bin/env bash
+LOCAL_RCD="$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)"
 BACKUPS_DIR="${LOCAL_RCD}/backups"
 
 command -v git >/dev/null 2>&1 || \
-    { echo >&2 "git is required but not installed. Aborting."; exit 1; }
-command -v node >/dev/null 2>&1 || \
-    { echo >&2 "node is required but not installed. Aborting."; exit 1; }
+  { echo >&2 "git is required but not installed. Aborting."; exit 1; }
+# command -v node >/dev/null 2>&1 || \
+#     { echo >&2 "node is required but not installed. Aborting."; exit 1; }
 
 files=(
     'bash/bashrc::.bashrc'
@@ -85,6 +85,10 @@ __do_links() {
             mkdir -p $(dirname $link)
         fi
 
+        if [ -L "$link" ]; then
+          unlink "$link"
+        fi
+
         if [ -f "$link" ]; then
             printf " x Error: '%s' already exists" "$link"
         elif (ln -s "$file" "$link" &> /dev/null); then
@@ -108,13 +112,13 @@ __do_vim_bundles() {
 
 __do_git_setup() {
     printf "Setting up git... \n"
-    npm install --global git-mob 2>&1 1>/dev/null
+    # npm install --global git-mob 2>&1 1>/dev/null
 
     git config --global user.name "Matthew Lanigan"
     git config --global user.email "rintaun@gmail.com"
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
-    git config --global core.hookspath ~/.git/hooks
+    # git config --global core.hookspath ~/.git/hooks
     printf "\e[1A"
     printf "Setting up git... completed.\n"
 }
