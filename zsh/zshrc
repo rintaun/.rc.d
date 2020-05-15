@@ -4,6 +4,8 @@ source "$RCDIR/zsh/antigen.zsh"
 
 export FZF_BASE="$RCDIR/vim/config/bundle/fzf"
 
+eval `dircolors "$RCDIR/zsh/dracula.dircolors"`
+
 antigen use oh-my-zsh
 
 antigen bundle command-not-found
@@ -24,7 +26,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time dir rvm nvm vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
-antigen theme bhilburn/powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
