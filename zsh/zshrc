@@ -20,6 +20,11 @@ source "$RCDIR/zsh/antigen.zsh"
   command -v gdircolors &> /dev/null && eval `gdircolors "$RCDIR/zsh/dracula.dircolors"`
 )
 
+command -v ag >/dev/null 2>&1 && {
+  export FZF_DEFAULT_COMMAND='ag -g "" --hidden --ignore-dir .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+}
+
 antigen use oh-my-zsh
 
 antigen bundle command-not-found
@@ -82,3 +87,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+setopt histignorespace
