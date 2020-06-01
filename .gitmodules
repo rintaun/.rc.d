@@ -16,3 +16,6 @@
 [submodule "asdf/runtime"]
 	path = asdf/runtime
 	url = https://github.com/asdf-vm/asdf.git
+[submodule "zsh/antigen"]
+	path = zsh/antigen
+	url = https://github.com/zsh-users/antigen

@@ -12,7 +12,7 @@ fi
 autoload bashcompinit
 bashcompinit
 
-source "$RCDIR/zsh/antigen.zsh"
+source "$RCDIR/zsh/antigen/antigen.zsh"
 
 (
   command -v dircolors &> /dev/null && eval `dircolors "$RCDIR/zsh/dracula.dircolors"`
