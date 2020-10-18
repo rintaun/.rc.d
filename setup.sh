@@ -130,7 +130,7 @@ __do_fzf_setup() {
 }
 
 __finalize_zsh() {
-    /usr/bin/env zsh --login -c 'echo done'
+    /usr/bin/env zsh --login ~/.zshrc
 }
 
 __do_submodules
