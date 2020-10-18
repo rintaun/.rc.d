@@ -124,9 +124,15 @@ __do_git_setup() {
     printf "Setting up git... completed.\n"
 }
 
+__do_fzf_setup() {
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --no-update-rc --no-bash --no-fish --all
+}
+
 __do_submodules
 __do_install_fonts
 __do_vim_bundles
 __do_backups
 __do_links
 __do_git_setup
+__do_fzf_setup
