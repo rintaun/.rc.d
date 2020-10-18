@@ -129,6 +129,10 @@ __do_fzf_setup() {
     ~/.fzf/install --no-update-rc --no-bash --no-fish --all
 }
 
+__finalize_zsh() {
+    /usr/bin/env zsh --login -c 'echo done'
+}
+
 __do_submodules
 __do_install_fonts
 __do_vim_bundles
@@ -136,3 +140,4 @@ __do_backups
 __do_links
 __do_git_setup
 __do_fzf_setup
+__finalize_zsh
