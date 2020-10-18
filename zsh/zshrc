@@ -30,6 +30,7 @@ antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle git
 antigen bundle gpg-agent
+antigen bundle ssh-agent
 antigen bundle fzf
 antigen bundle zdharma/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
