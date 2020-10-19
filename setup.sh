@@ -104,11 +104,8 @@ __do_links() {
 
 __do_vim_bundles() {
     printf "Installing vim Bundles... "
-    if (vim +BundleInstall +qall &> /dev/null); then
-        printf " completed."
-    else
-        printf " failed."
-    fi
+    vim +BundleInstall +qall
+    printf " completed."
     printf "\n"
 }
 
