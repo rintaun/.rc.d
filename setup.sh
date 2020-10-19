@@ -10,7 +10,6 @@ command -v git >/dev/null 2>&1 || \
 files=(
     'bash/bashrc::.bashrc'
     'zsh/zshrc::.zshrc'
-    'zsh/zprofile::.zprofile'
     'zsh/p10k.zsh::.p10k.zsh'
     'tmux/tmux.conf::.tmux.conf'
     'vim/vimrc::.vimrc'
@@ -129,10 +128,6 @@ __do_fzf_setup() {
     ~/.fzf/install --no-update-rc --no-bash --no-fish --all
 }
 
-__finalize_zsh() {
-    /usr/bin/env zsh --login ~/.zshrc
-}
-
 __do_submodules
 __do_install_fonts
 __do_vim_bundles
@@ -140,4 +135,3 @@ __do_backups
 __do_links
 __do_git_setup
 __do_fzf_setup
-__finalize_zsh
