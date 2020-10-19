@@ -118,14 +118,18 @@ __do_git_setup() {
     git config --global user.email "rintaun@gmail.com"
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
+    git config --global alias.sweep '!git branch --merged master | grep -v '\''master$'\'' | xargs -r git branch -d && git remote prune origin'
     # git config --global core.hookspath ~/.git/hooks
     printf "\e[1A"
     printf "Setting up git... completed.\n"
 }
 
 __do_fzf_setup() {
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --no-update-rc --no-bash --no-fish --all
+    printf "Setting up fzf... \n"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 2&>1 > /dev/null
+    ~/.fzf/install --no-update-rc --no-bash --no-fish --all > /dev/null
+    printf "\e[1A"
+    printf "Setting up fzf... completed.\n"
 }
 
 __do_submodules
