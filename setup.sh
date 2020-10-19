@@ -48,10 +48,12 @@ __do_submodules() {
 }
 
 __do_install_fonts() {
+    printf "Initializing fonts... "
     cd ${LOCAL_RCD}/powerline-fonts
-    ./install.sh
+    ( (./install.sh > /dev/null 2>&1) && printf "o" ) || printf "x"
     cd ${LOCAL_RCD}/awesome-terminal-fonts
-    (./install.sh > /dev/null) || return 0
+    ( (./install.sh > /dev/null 2>&1) && printf "o" ) || printf "x"
+    printf "\n"
 }
 
 __do_backups() {
@@ -125,11 +127,19 @@ __do_git_setup() {
 }
 
 __do_fzf_setup() {
-    printf "Setting up fzf... \n"
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 2&>1 > /dev/null
-    ~/.fzf/install --no-update-rc --no-bash --no-fish --all > /dev/null
-    printf "\e[1A"
-    printf "Setting up fzf... completed.\n"
+    printf "Setting up fzf..."
+
+    if [ -d "$HOME/.fzf" ]; then
+        printf " skipped.\n"
+    else
+        printf " cloning...\n"
+        git clone --quiet --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+        printf "\e[1A"
+        printf "Setting up fzf... installing...\n"
+        "$HOME/.fzf/install" --no-update-rc --no-bash --no-fish --all >/dev/null 2>&1
+        printf "\e[1A"
+        printf "Setting up fzf... completed.         \n"
+    fi
 }
 
 __do_submodules
