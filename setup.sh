@@ -10,7 +10,7 @@ command -v git >/dev/null 2>&1 || \
 files=(
     'bash/bashrc::.bashrc'
     'zsh/zshrc::.zshrc'
-    'zsh/zlogin::.zlogin'
+    'zsh/zprofile::.zprofile'
     'zsh/p10k.zsh::.p10k.zsh'
     'tmux/tmux.conf::.tmux.conf'
     'vim/vimrc::.vimrc'
