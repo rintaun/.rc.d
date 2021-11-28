@@ -1,0 +1,3 @@
+export RCDIR=`realpath -m $(realpath $HOME/.zshenv)/../..`
+
+[ -f "$RCDIR/env" ] && source "$RCDIR/env"
