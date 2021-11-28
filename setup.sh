@@ -9,6 +9,7 @@ command -v git >/dev/null 2>&1 || \
 
 files=(
     'bash/bashrc::.bashrc'
+    'sh/profile::.profile'
     'zsh/zshrc::.zshrc'
     'zsh/p10k.zsh::.p10k.zsh'
     'tmux/tmux.conf::.tmux.conf'
