@@ -31,9 +31,9 @@ antigen bundle command-not-found
 antigen bundle git
 antigen bundle gpg-agent
 antigen bundle fzf
-antigen bundle zdharma/fast-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
+antigen bundle git@github.com:zdharma/fast-syntax-highlighting.git
+antigen bundle git@github.com:zsh-users/zsh-autosuggestions.git
+antigen bundle git@github.com:zsh-users/zsh-completions.git
 antigen bundle asdf
 
 POWERLEVEL9K_MODE='nerdfont-complete'
