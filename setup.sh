@@ -144,7 +144,7 @@ __do_fzf_setup() {
 
 __do_submodules
 __do_install_fonts
-__do_vim_bundles
+# __do_vim_bundles
 __do_backups
 __do_links
 __do_git_setup
