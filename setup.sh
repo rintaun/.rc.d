@@ -120,6 +120,7 @@ __do_git_setup() {
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
     git config --global alias.sweep '!git branch --merged master | grep -v '\''master$'\'' | xargs -r git branch -d && git remote prune origin'
+    [[ -f "$LOCAL_RCD/git/config" ]] && source "$LOCAL_RCD/git/config"
     # git config --global core.hookspath ~/.git/hooks
     printf "\e[1A"
     printf "Setting up git... completed.\n"
