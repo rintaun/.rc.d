@@ -97,4 +97,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 setopt histignorespace
 
-source ~/.zprofile
+[[ ~ -f ~/.zprofile ]] || source ~/.zprofile
