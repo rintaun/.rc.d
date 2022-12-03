@@ -9,6 +9,7 @@ command -v git >/dev/null 2>&1 || \
 
 files=(
     'bash/bashrc::.bashrc'
+    'bash/bash_profile::.bash_profile'
     'sh/profile::.profile'
     'zsh/zshenv::.zshenv'
     'zsh/zshrc::.zshrc'
@@ -117,9 +118,12 @@ __do_git_setup() {
 
     git config --global user.name "Matthew Lanigan"
     git config --global user.email "rintaun@gmail.com"
+    git config --global user.signingkey "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtqJ7zOtqQtYqOo0CpvDXNlMhV3HeJDpjrASKGLWdop"
     git config --global commit.gpgsign true
     git config --global commit.template ~/.git/commit-template
-    git config --global alias.sweep '!git branch --merged master | grep -v '\''master$'\'' | xargs -r git branch -d && git remote prune origin'
+    git config --global gpg.format "ssh"
+    git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+    git config --global alias.sweep '!git branch --merged `git remote show origin | grep HEAD | cut -d ':' -f 2` | grep -v `git remote show origin | grep HEAD | cut -d ':' -f 2`'$' | xargs -r git branch -d && git remote prune origin'
     [[ -f "$LOCAL_RCD/git/config" ]] && source "$LOCAL_RCD/git/config"
     # git config --global core.hookspath ~/.git/hooks
     printf "\e[1A"

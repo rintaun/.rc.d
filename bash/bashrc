@@ -26,6 +26,8 @@ export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+[[ -f "$RCDIR/env" ]] && source "$RCDIR/env"
+
 # VirtualEnv (python) setup -- disabled in favor of asdf
 # [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 

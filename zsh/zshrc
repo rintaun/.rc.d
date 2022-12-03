@@ -28,15 +28,18 @@ command -v ag >/dev/null 2>&1 && {
 
 antigen use oh-my-zsh
 
+# antigen bundle gpg-agent
+# antigen bundle ssh-agent
+
 antigen bundle command-not-found
 antigen bundle git
-antigen bundle gpg-agent
 antigen bundle fzf
-antigen bundle git@github.com:zdharma/fast-syntax-highlighting.git
-antigen bundle git@github.com:zsh-users/zsh-autosuggestions.git
-antigen bundle git@github.com:zsh-users/zsh-completions.git
+antigen bundle https://github.com/zdharma/fast-syntax-highlighting.git
+antigen bundle https://github.com/zsh-users/zsh-autosuggestions.git
+antigen bundle https://github.com/zsh-users/zsh-completions.git
 antigen bundle asdf
 
+POWERLEVEL9K_INSTANT_PROMPT=quiet
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_STRATEGY='truncate_to_unique'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -68,8 +71,8 @@ function vimgrep() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [[ -d "$HOME/Library/Python/3.7/bin" ]] && export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 
-[[ -f "/usr/bin/keychain" ]] && [[ -z "/usr/bin/keychain" ]] && /usr/bin/keychain --quiet --nogui $HOME/.ssh/id_rsa
-[[ -f "$HOME/.keychain/$HOST-sh" ]] && source $HOME/.keychain/$HOST-sh
+# [[ -f "/usr/bin/keychain" ]] && [[ -x "/usr/bin/keychain" ]] && /usr/bin/keychain --quiet --nogui $HOME/.ssh/id_rsa
+# [[ -f "$HOME/.keychain/$HOST-sh" ]] && source $HOME/.keychain/$HOST-sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -93,3 +96,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 setopt histignorespace
+
+source ~/.zprofile

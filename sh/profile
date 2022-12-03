@@ -9,6 +9,7 @@
 #umask 022
 
 RCDIR=`realpath -m $(realpath $HOME/.profile)/../..`
+[ -f "$RCDIR/env" ] && . "$RCDIR/env"
 
 [ -x "$(command -v keychain)" ] && eval $(keychain --eval --quiet)
 
