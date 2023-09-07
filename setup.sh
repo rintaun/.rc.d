@@ -20,6 +20,9 @@ files=(
     'git::.git'
     'nvm/nvmrc::.nvmrc'
     'asdf/asdfrc::.asdfrc'
+)
+
+no_overwrite_files=(
     'asdf/runtime::.asdf'
 )
 
@@ -96,6 +99,31 @@ __do_links() {
 
         if [ -f "$link" ]; then
             printf " x Error: '%s' already exists" "$link"
+        elif (ln -s "$file" "$link" &> /dev/null); then
+            printf " * Linked '%s' to '%s'" "$file" "$link"
+        else
+            printf " x Error: Couldn't link '%s' to '%s'" "$file" "$link"
+        fi
+        printf "\n"
+    done
+
+    for index in "${no_overwrite_files[@]}"; do
+        KEY="${index%%::*}"
+        VALUE="${index##*::}"
+        file="${LOCAL_RCD}/${KEY}"
+        link="${HOME}/${VALUE}"
+        if [ ! -d $(dirname $link) ]; then
+            mkdir -p $(dirname $link)
+        fi
+
+        if [ -L "$link" ]; then
+          continue
+        fi
+
+        if [ -f "$link" ]; then
+            continue
+        elif [ -d "$link" ]; then
+            continue
         elif (ln -s "$file" "$link" &> /dev/null); then
             printf " * Linked '%s' to '%s'" "$file" "$link"
         else
