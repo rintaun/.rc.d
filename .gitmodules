@@ -6,7 +6,7 @@
 	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "lib/powerline"]
 	path = lib/powerline
-	url = https://github.com/Lokaltog/powerline
+	url = https://github.com/Lokaltog/powerline.git
 [submodule "powerline-fonts"]
 	path = powerline-fonts
 	url = https://github.com/powerline/fonts.git
@@ -18,4 +18,4 @@
 	url = https://github.com/asdf-vm/asdf.git
 [submodule "zsh/antigen"]
 	path = zsh/antigen
-	url = https://github.com/zsh-users/antigen
+	url = https://github.com/zsh-users/antigen.git
